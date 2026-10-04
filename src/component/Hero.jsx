@@ -168,7 +168,14 @@ function Hero() {
             development.
           </p>
         </div>
-        <video className="video__media" src={generation} autoPlay muted loop />
+        <video
+          className="video__media"
+          src={generation}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
       </div>
       <section className="achievement" aria-labelledby="achievement-title">
         <div className="achievement__heading">
