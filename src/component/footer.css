@@ -98,6 +98,22 @@
   }
 }
 
+@media (max-width: 767px) {
+  .site-footer__content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-footer__content {
+    grid-template-columns: 1.1fr 0.8fr 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .site-footer__link {
     transition: none;

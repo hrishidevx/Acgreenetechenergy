@@ -11,12 +11,12 @@ function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="Roboto-font sticky top-0 z-50 flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-2 bg-sky-100 text-[#1039E3] shadow-sm pl-[2rem] pr-[1rem]">
+    <header className="site-header Roboto-font sticky top-0 z-50 flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-2 bg-sky-100 text-[#1039E3] shadow-sm pl-[2rem] pr-[1rem]">
       <Link to="/" aria-label="AC Greentech Energy home" className="shrink-0">
         <img
           src={logo}
           alt="AC Greentech Energy"
-          className="h-[6rem] object-contain"
+          className="site-header__logo h-[6rem] object-contain"
         />
       </Link>
       <button

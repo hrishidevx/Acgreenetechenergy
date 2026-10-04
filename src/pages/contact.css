@@ -202,6 +202,17 @@
   outline-offset: 3px;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-page {
+    padding: 3rem 2rem;
+  }
+
+  .contact-card {
+    width: min(100%, 680px);
+    padding: 2.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .contact-form__submit {
     transition: none;

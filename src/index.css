@@ -3,3 +3,65 @@ body {
   background-color: rgba(60, 60, 60, 0.785);
   /* color: rgb(14, 249, 249) */
 }
+
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 100%;
+  }
+
+  .site-header {
+    gap: 0.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .site-header__logo {
+    height: 4.25rem;
+  }
+
+  .site-header .tangerine-font {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-header {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .site-header__logo {
+    height: 5rem;
+  }
+
+  .site-header nav {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .site-header nav ul {
+    width: auto;
+    gap: clamp(0.5rem, 1.3vw, 0.9rem);
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  }
+
+  .site-header .tangerine-font {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .site-header .tangerine-font h3 {
+    font-size: 1.1rem;
+  }
+
+  .site-header .tangerine-font h4 {
+    font-size: 0.8rem;
+  }
+}
