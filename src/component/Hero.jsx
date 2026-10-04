@@ -16,6 +16,8 @@ import HeroActions from "./HeroActions";
 import { nextSlide, previousSlide } from "../store/sliderSlice";
 import { useNavigate } from "react-router";
 
+const brands = ["UTL", "Microtek", "V-Guard", "Oswal", "Eastman"];
+
 function Hero() {
   const teamMembers = [
     { image: kapil, role: "Director" },
@@ -45,80 +47,89 @@ function Hero() {
   return (
     <div>
       <div className="advertise relative h-[30rem] w-full pt-[2rem]">
-      <div className="advertise-text advertise__badges absolute top-[28%] sm:top-[30%] left-4 sm:left-1/5 z-10 mb-6 flex flex-wrap items-center gap-2.5 sm:gap-4 text-center">
-          <p className="flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-sm sm:text-base font-semibold text-slate-800 shadow-md backdrop-blur-md border border-slate-200/80 transition-all hover:bg-white hover:shadow-lg">
-            <svg
-              className="h-4 w-4 text-emerald-600 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span>Trusted</span>
-          </p>
-          <p className="flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-sm sm:text-base font-semibold text-slate-800 shadow-md backdrop-blur-md border border-slate-200/80 transition-all hover:bg-white hover:shadow-lg">
-            <svg
-              className="h-4 w-4 text-emerald-600 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span>Reliable</span>
-          </p>
-          <p className="flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-sm sm:text-base font-semibold text-slate-800 shadow-md backdrop-blur-md border border-slate-200/80 transition-all hover:bg-white hover:shadow-lg">
-            <svg
-              className="h-4 w-4 text-emerald-600 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span>Affordable</span>
-          </p>
-          <p className="flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-sm sm:text-base font-semibold text-slate-800 shadow-md backdrop-blur-md border border-slate-200/80 transition-all hover:bg-white hover:shadow-lg">
-            <svg
-              className="h-4 w-4 text-emerald-600 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span>Quality</span>
-          </p>
-        </div>
-        <div className="advertise__heading absolute top-1/2 left-1/3 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-5">
-          <h1 className="text-xl ml-[3rem] font-bold leading-tight text-[#1039E3] sm:text-4xl lg:text-5xl Roboto-font">
-            Multi Solar Company{" "}
-            <span className="text-[#1039E3]">Distributor</span> in
-            <span className="text-emerald-700">Gurgaon</span>
-          </h1>
+        <div className="advertise__content">
+          <div className="advertise-text advertise__badges flex flex-wrap items-center text-center">
+            <p className="flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition-all hover:bg-white hover:shadow-lg sm:text-base">
+              <svg
+                className="h-4 w-4 shrink-0 text-emerald-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Trusted</span>
+            </p>
+            <p className="flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition-all hover:bg-white hover:shadow-lg sm:text-base">
+              <svg
+                className="h-4 w-4 shrink-0 text-emerald-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Reliable</span>
+            </p>
+            <p className="flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition-all hover:bg-white hover:shadow-lg sm:text-base">
+              <svg
+                className="h-4 w-4 shrink-0 text-emerald-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Affordable</span>
+            </p>
+            <p className="flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition-all hover:bg-white hover:shadow-lg sm:text-base">
+              <svg
+                className="h-4 w-4 shrink-0 text-emerald-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Quality</span>
+            </p>
+          </div>
+          <div className="advertise__heading flex flex-col items-center">
+            <h1 className="text-xl font-bold leading-tight text-[#1039E3] sm:text-4xl lg:text-5xl Roboto-font">
+              Multi Solar Company{" "}
+              <span className="text-[#1039E3]">Distributor</span> in
+              <span className="text-emerald-700">Gurgaon</span>
+            </h1>
 
-          <HeroActions />
+            <ul className="advertise__brands" aria-label="Available brands">
+              {brands.map((brand) => (
+                <li className="advertise__brand" key={brand}>
+                  {brand}
+                </li>
+              ))}
+            </ul>
+            <HeroActions />
+          </div>
         </div>
         <div className="solar" aria-live="off">
           <div className="solar__track">

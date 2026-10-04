@@ -43,25 +43,34 @@ body {
   }
 
   .site-header nav {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
     justify-content: center;
   }
 
   .site-header nav ul {
-    width: auto;
-    gap: clamp(0.5rem, 1.3vw, 0.9rem);
-    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    width: 100%;
+    gap: clamp(0.45rem, 1vw, 0.75rem);
+    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+    font-weight: 700;
+  }
+
+  .site-header nav a {
+    white-space: nowrap;
   }
 
   .site-header .tangerine-font {
-    padding: 0.6rem 0.75rem;
+    width: 12rem;
+    padding: 0.55rem 0.65rem;
   }
 
   .site-header .tangerine-font h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .site-header .tangerine-font h4 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: normal;
   }
 }

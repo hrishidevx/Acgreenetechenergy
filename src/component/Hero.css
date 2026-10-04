@@ -17,28 +17,50 @@
   isolation: isolate;
   overflow: hidden;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+.advertise__content {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: min(calc(100% - 2rem), 64rem);
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
   .advertise {
-    height: 28rem;
-  }
-
-  .advertise__badges {
-    top: 1.5rem;
-    left: 5%;
-    gap: 0.6rem;
-  }
-
-  .advertise__heading {
-    top: 58%;
-    left: 50%;
-    width: min(80%, 48rem);
-    gap: 1.25rem;
+    height: clamp(30rem, 40vw, 36rem);
   }
 
   .advertise__heading h1 {
-    max-width: 34rem;
-    margin-left: 0;
-    font-size: clamp(1.8rem, 3.4vw, 2.3rem);
+    max-width: 48rem;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    text-align: center;
+  }
+
+  .solar__arrow--previous {
+    left: 1rem;
+    top: 50%;
+    height: 4rem;
+  }
+
+  .solar__arrow--next {
+    right: 1rem;
+    top: 50%;
+    height: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .advertise {
+    height: clamp(26rem, 44vw, 30rem);
+  }
+
+  .advertise__heading h1 {
+    max-width: 32rem;
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
     text-align: center;
   }
 
@@ -93,24 +115,6 @@
     height: 32rem;
     padding-top: 0;
   }
-  .advertise__badges {
-    top: 1rem;
-    right: 0.75rem;
-    left: 0.75rem;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .advertise__heading {
-    top: 56%;
-    left: 50%;
-    width: calc(100% - 2rem);
-    gap: 1rem;
-  }
-  .advertise__heading h1 {
-    margin-left: 0;
-    font-size: clamp(1.5rem, 7vw, 2.25rem);
-    text-align: center;
-  }
 }
 
 @media (max-width: 640px) {
@@ -118,21 +122,7 @@
     height: 34rem;
     padding-top: 0;
   }
-  .advertise__badges {
-    top: 1rem;
-    right: 0.75rem;
-    left: 0.75rem;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .advertise__heading {
-    top: 56%;
-    left: 50%;
-    width: calc(100% - 2rem);
-    gap: 1rem;
-  }
   .advertise__heading h1 {
-    margin-left: 0;
     font-size: clamp(1.5rem, 7vw, 2.25rem);
     text-align: center;
   }
@@ -287,10 +277,18 @@
   height: 43rem;
   border-radius: 10px;
 }
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .achievement-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .achievement-card img {
+    flex: 1 1 auto;
     height: clamp(18rem, 40vw, 24rem);
-    object-fit: contain;
+    width: 100%;
+    /* height: 20rem; */
   }
 }
 @media (max-width: 640px) {
@@ -411,5 +409,71 @@
 @media (min-width: 768px) and (max-width: 800px) {
   .team-card__photo {
     height: 300px;
+  }
+}
+
+.advertise-text {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.advertise__heading {
+  position: static;
+  width: 100%;
+  gap: 8px;
+  text-align: center;
+}
+
+.advertise__heading h1 {
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.advertise__brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advertise__brand {
+  padding: 7px 14px;
+  border: 1px solid #d4ed83;
+  border-radius: 999px;
+  background: #12392f;
+  box-shadow: 0 5px 14px rgb(18 57 47 / 35%);
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .advertise__content {
+    top: 53%;
+    width: calc(100% - 1.5rem);
+    gap: 8px;
+  }
+
+  .advertise__brands {
+    gap: 6px;
+  }
+
+  .advertise__brand {
+    padding: 6px 10px;
+    font-size: clamp(0.9rem, 4vw, 1.05rem);
   }
 }
