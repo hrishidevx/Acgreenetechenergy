@@ -1,0 +1,108 @@
+.about-page {
+  --about-ink: #17392f;
+  --about-muted: #5f746c;
+  --about-green: #176b4b;
+  --about-lime: #d4ed83;
+
+  min-height: calc(100vh - 6rem);
+  padding: clamp(42px, 7vw, 88px) max(24px, calc((100vw - 1120px) / 2));
+  background:
+    radial-gradient(ellipse at 92% 5%, rgb(212 237 131 / 22%), transparent 30%),
+    #f7f8f2;
+  color: var(--about-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-page h1 {
+  max-width: 760px;
+  margin: 0 0 28px;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1.04;
+}
+
+.about-page h1:first-of-type {
+  padding-bottom: 23px;
+  border-bottom: 1px solid #dce5d9;
+}
+
+.about-page p {
+  max-width: 780px;
+  margin: 0 0 18px;
+  color: var(--about-muted);
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.85;
+}
+
+.about-page p b {
+  color: var(--about-ink);
+  font-weight: 700;
+}
+
+.about-page__offers-title {
+  margin: clamp(42px, 6vw, 70px) 0 24px;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -0.05em;
+}
+
+.about-page ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 920px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-page li {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  padding: 16px 20px;
+  border: 1px solid #e0e8dc;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 78%);
+  color: var(--about-ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.5;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.about-page li:hover {
+  transform: translateY(-3px);
+  border-color: #bfd3b6;
+  box-shadow: 0 12px 26px rgb(23 57 47 / 8%);
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 42px 20px 54px;
+  }
+
+  .about-page h1:first-of-type {
+    margin-bottom: 22px;
+    padding-bottom: 19px;
+  }
+
+  .about-page ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-page li {
+    min-height: 62px;
+    padding: 14px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page li {
+    transition: none;
+  }
+}
