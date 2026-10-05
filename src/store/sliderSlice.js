@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import solar1 from "../assets/solar/solar1.png";
-import solar2 from "../assets/solar/solar2.jpeg";
-import solar3 from "../assets/solar/solar3.jpeg";
+import inverter from "../assets/solar/inverter.png";
+import solar3 from "../assets/solar/solar3.png";
 import pcu from "../assets/solar/pcu.jpg";
 import battery from "../assets/solar/battery.png";
+import industries from "../assets/solar/industries.jpeg";
 
 const initialState = {
   slides: [
     {
-      image: solar1,
+      image: solar3,
       alt: "Residential and commercial solar energy storage solutions",
+    },
+    {
+      image: inverter,
+      alt: "utl Inverter Installed",
     },
     {
       image: pcu,
@@ -20,11 +25,11 @@ const initialState = {
       alt: "Lithium battery and pcu",
     },
     {
-      image: solar3,
+      image: solar1,
       alt: "Solar Installation",
     },
     {
-      image: solar2,
+      image: industries,
       alt: "Solar Installation",
     },
   ],

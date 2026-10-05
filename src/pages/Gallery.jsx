@@ -43,18 +43,22 @@ function Gallery() {
       </section>
 
       <section className="gallery-grid" aria-label="Photo gallery">
-        {galleryImages.map(({ src, title }, index) => (
+        {galleryImages.map(({ src, title, type }, index) => (
           <button
             className="gallery-tile"
             key={src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            aria-label={`Open ${title}, image ${index + 1} of ${galleryImages.length}`}
+            aria-label={`Open ${title}, ${type} ${index + 1} of ${galleryImages.length}`}
           >
-            <img src={src} alt={title} loading="lazy" />
+            {type === "video" ? (
+              <video src={src} muted playsInline preload="metadata" />
+            ) : (
+              <img src={src} alt={title} loading="lazy" />
+            )}
             <span className="gallery-tile__caption">
               <span className="gallery-tile__open" aria-hidden="true">
-                View image <span>↗</span>
+                {type === "video" ? "Play video" : "View image"} <span>↗</span>
               </span>
             </span>
           </button>
@@ -66,7 +70,7 @@ function Gallery() {
           className="gallery-viewer"
           role="dialog"
           aria-modal="true"
-          aria-label="Image viewer"
+          aria-label="Gallery viewer"
           onClick={() => setActiveIndex(null)}
         >
           <button
@@ -92,10 +96,20 @@ function Gallery() {
             className="gallery-viewer__content"
             onClick={(event) => event.stopPropagation()}
           >
-            <img
-              src={galleryImages[activeIndex].src}
-              alt={galleryImages[activeIndex].title}
-            />
+            {galleryImages[activeIndex].type === "video" ? (
+              <video
+                key={galleryImages[activeIndex].src}
+                src={galleryImages[activeIndex].src}
+                autoPlay
+                controls
+                playsInline
+              />
+            ) : (
+              <img
+                src={galleryImages[activeIndex].src}
+                alt={galleryImages[activeIndex].title}
+              />
+            )}
             <figcaption>
               <span>{galleryImages[activeIndex].title}</span>
               <span>

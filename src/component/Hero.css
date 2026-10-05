@@ -30,10 +30,6 @@
   transform: translate(-50%, -50%);
 }
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .advertise {
-    height: clamp(30rem, 40vw, 36rem);
-  }
-
   .advertise__heading h1 {
     max-width: 48rem;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -54,10 +50,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .advertise {
-    height: clamp(26rem, 44vw, 30rem);
-  }
-
   .advertise__heading h1 {
     max-width: 32rem;
     font-size: clamp(1.75rem, 3.2vw, 2.25rem);
@@ -76,6 +68,18 @@
     height: 3.5rem;
   }
 
+  .commercial h1 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+
+  .commercial p {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+  }
+
+  .team-card__photo {
+    height: clamp(230px, 32vw, 300px);
+  }
+
   .video {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -90,38 +94,15 @@
     width: auto;
   }
 
-  .commercial h1 {
-    font-size: clamp(1.6rem, 3vw, 2rem);
-  }
-
-  .commercial p {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-  }
-
   .video__media {
     display: block;
     width: 100%;
     height: clamp(18rem, 32vw, 24rem);
     object-fit: cover;
   }
-
-  .team-card__photo {
-    height: clamp(230px, 32vw, 300px);
-  }
-}
-
-@media (max-width: 767px) {
-  .advertise {
-    height: 32rem;
-    padding-top: 0;
-  }
 }
 
 @media (max-width: 640px) {
-  .advertise {
-    height: 34rem;
-    padding-top: 0;
-  }
   .advertise__heading h1 {
     font-size: clamp(1.5rem, 7vw, 2.25rem);
     text-align: center;
@@ -151,8 +132,7 @@
   }
 }
 .solar {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 0;
   width: 100%;
   overflow: hidden;
@@ -161,7 +141,7 @@
 .solar__track {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 30rem;
 }
 .solar__slide {
   position: absolute;
@@ -203,17 +183,25 @@
 .solar__arrow--previous {
   left: -15px;
   height: 5rem;
-  top: 12rem;
 }
 .solar__arrow--next {
   right: -15px;
   height: 5rem;
-  top: 12rem;
 }
 @media (max-width: 640px) {
   .solar__arrow {
     width: 38px;
     height: 38px;
+  }
+  .solar__track {
+    height: 22rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  .solar__track img {
+    height: 23rem;
+    width: 100%;
+    object-fit: fill;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -401,8 +389,15 @@
   .team-card--wide {
     grid-column: auto;
   }
+  .team-card--wide img {
+    height: 10rem;
+  }
+
   .team-card__photo {
     height: 360px;
+  }
+  .team-card-photo {
+    height: 10rem;
   }
 }
 

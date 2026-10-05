@@ -46,7 +46,7 @@ function Hero() {
 
   return (
     <div>
-      <div className="advertise relative h-[30rem] w-full pt-[2rem]">
+      <div className="advertise relative w-full">
         <div className="advertise__content">
           <div className="advertise-text advertise__badges flex flex-wrap items-center text-center">
             <p className="flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition-all hover:bg-white hover:shadow-lg sm:text-base">
@@ -258,7 +258,7 @@ function Hero() {
         </div>
         <div className="team-img">
           {teamMembers.map(({ image, role }) => (
-            <figure className="team-card" key={role}>
+            <figure className="team-card" key={image}>
               <div className="team-card__photo">
                 <img src={image} alt={role} />
               </div>
@@ -266,7 +266,7 @@ function Hero() {
             </figure>
           ))}
           <figure className="team-card team-card--wide team_img">
-            <div className="team-card__photo ">
+            <div className="team-card-photo team-card__photo  ">
               <img src={team} alt="Supportive team" />
             </div>
             <figcaption>Supportive Team</figcaption>
