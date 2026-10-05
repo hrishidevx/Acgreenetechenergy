@@ -9,6 +9,7 @@ import Contact from "./pages/contact";
 import Services from "./pages/services";
 import Gallery from "./pages/Gallery";
 import { store } from "./store/store";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <SpeedInsights />
       </div>
     </Provider>
   );
